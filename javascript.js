@@ -49,6 +49,13 @@ function onVolumeSliderChange(){
     audioPlayer.volume = volumeSlider.value * 0.01;
 }
 
+function onSongProgressChange(){
+    audioPlayer.currentTime = progressSlider.value;
+
+}
+
+
+
 function secondsToMMSS(seconds){
     const intergerSeconds = parseInt(seconds);
     let MM = parseInt(intergerSeconds / 60);
@@ -63,3 +70,4 @@ audioPlayer.onloadedmetadata = onLoadedMetadata;
 audioPlayer.ontimeupdate = onTimeUpdate;
 audioPlayer.onended = onEnd;
 volumeSlider.onchange = onVolumeSliderChange;
+progressSlider.onchange = onSongProgressChange;
