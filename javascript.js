@@ -9,9 +9,15 @@ const volumeSlider = document.getElementById("volume-slider");
 
 const songProgress = document.getElementById("song-progress");
 const songLength = document.getElementById("song-length");
-const songList = ["assets/duck1.mp3", "assets/duck2.mp3", "assets/duck3mp3", "assets/duckChristmas.mp3", "assets.duck4.mp3", "assets.duck5.mp3"]
+const songList = ["assets/duck1.mp3", "assets/duck2.mp3", "assets/duck3.mp3", "assets/duckChristmas.mp3", "assets/duck4.mp3", "assets/duck5.mp3"]
 const songTitles = ["The Duck Song 1", "The Duck Song 2", "The Duck Song 3", "The Christmas Duck Story", "The Duck Song 4", "The Duck Song 5"]
-const songImages = ["Duck Song 1.jpeg", "Duck Song 2.jpg", "Duck Song 3.jpeg", "Duck Christmas.jpeg", "Duck Song 4.jpeg", "Duck Song 5.jpeg"]
+const songImages = ["assets/Duck Song 1.jpeg", "assets/Duck Song 2.jpg", "assets/Duck Song 3.jpeg", "assets/Duck Christmas.jpeg", "assets/Duck Song 4.jpeg", "assets/Duck Song 5.jpeg"]
+const nextSong = document.getElementById("next");
+const previousSong = document.getElementById("previous");
+let songCounter = 0;
+const songTitle = document.getElementById("song-title");
+const songImage = document.getElementById("song-image");
+
 
 //audioPlayer.src is first song in playlist
 audioPlayer.src = "assets/duck1.mp3";
@@ -78,6 +84,32 @@ function secondsToMMSS(seconds){
     return MM + ":" + SS;
 }
 
+function playNextSong(){
+    if (songCounter === songList.length - 1)
+        songCounter = 0;
+    else
+        songCounter++;
+    audioPlayer.src = songList[songCounter];
+    songTitle.innerHTML = songTitles[songCounter];
+    songImage.src = songImages[songCounter];
+    console.log(songImages[songCounter])
+    }
+
+function playPreviousSong(){
+    if (songCounter === 0)
+        songCounter = songList.length - 1;
+    
+    else
+        songCounter--;
+    audioPlayer.src = songList[songCounter]
+    songTitle.innerHTML = songTitles[songCounter]
+    songImage.src = songImages[songCounter];
+    console.log(songImages[songCounter])
+
+
+}
+
+
 playPauseButton.onclick = onPlayPauseClick;
 audioPlayer.onloadedmetadata = onLoadedMetadata;
 audioPlayer.ontimeupdate = onTimeUpdate;
@@ -85,3 +117,5 @@ audioPlayer.onended = onEnd;
 volumeSlider.onchange = onVolumeSliderChange;
 progressSlider.onchange = onSongProgressChange;
 progressSlider.onmousedown = onProgressMouseDown;
+previousSong.onclick = playPreviousSong;
+nextSong.onclick = playNextSong;
