@@ -2,6 +2,8 @@
 const audioPlayer = new Audio();
 //select play pause button element
 const playPauseButton = document.getElementById("play-button");
+
+const progressSlider = document.getElementById("progress-slider");
 //audioPlayer.src is first song in playlist
 audioPlayer.src = "assets/duck1.mp3";
 
@@ -22,7 +24,21 @@ function onPlayPauseClick(){
 
 function onLoadedMetadata(){
     console.log(audioPlayer.duration);
+    progressSlider.max = audioPlayer.duration;
+}
+
+function onTimeUpdate(){
+    progressSlider.value = audioPlayer.currentTime;
+}
+
+function onEnd(){
+    progressSlider.value = 0
+    playPauseButton.innerHTML = "Play"
+    playing = false;
+
 }
 
 playPauseButton.onclick = onPlayPauseClick;
 audioPlayer.onloadedmetadata = onLoadedMetadata;
+audioPlayer.ontimeupdate = onTimeUpdate;
+audioPlayer.onended = onEnd;
