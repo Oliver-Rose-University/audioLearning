@@ -5,7 +5,7 @@
     justify-content: center;
 }
 
-.flexColumn{
+.flexcolumn{
     flex-direction: column;
 }
 
@@ -21,4 +21,13 @@
 
 #header1{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial
+}
+
+.coverImage{
+    width: 25vw;
+    height: auto;
+    border: black;
+    border-style: solid;
+    border-radius: 5%;
+    margin: 5%;
 }
