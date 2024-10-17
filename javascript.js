@@ -20,5 +20,9 @@ function onPlayPauseClick(){
     }
 }
 
+function onLoadedMetadata(){
+    console.log(audioPlayer.duration);
+}
 
 playPauseButton.onclick = onPlayPauseClick;
+audioPlayer.onloadedmetadata = onLoadedMetadata;
