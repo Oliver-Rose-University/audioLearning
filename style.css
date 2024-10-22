@@ -6,12 +6,12 @@
 }
 
 .flexcolumn{
-    flex-direction: column;
+    flex-direction:column;
 }
 /* specific ID styling for specific aspects of the HTML */
 #div1{
     width: 60vw;
-    height: 50vh;
+    height: 55vh;
     align-self: center;
 }
 
