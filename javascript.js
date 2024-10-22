@@ -59,6 +59,8 @@ function onEnd(){
     playPauseButton.innerHTML = "Play";
     playing = false;
     songProgress.innerHTML = "00:00";
+    playNextSong();
+    onPlayPauseClick();
 }
 
 // changes volume
