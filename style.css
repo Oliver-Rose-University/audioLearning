@@ -1,4 +1,4 @@
-
+/* creates flex classes for use in html */
 .flexbox{
     display: flex;
     align-items: center;
@@ -8,7 +8,7 @@
 .flexcolumn{
     flex-direction: column;
 }
-
+/* specific ID styling for specific aspects of the HTML */
 #div1{
     width: 75vw;
     height: 90vh;
@@ -20,11 +20,11 @@
     margin-top: 10vh;
     
 }
-
+/* sets a different font for the header */
 #header1{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial
 }
-
+/* Determines the size of the image, changing how big or small it is to fit the dimensions given and applying styling */
 .coverImage{
     width: 25vw;
     height: auto;
@@ -45,6 +45,7 @@
 
 }
   
+/* styles the slider that is used to adjust song progress. At present this does not work */
   #progress-slider ::-webkit-slider-thumb{
     -webkit-appearance: none;
     width: 230px;
@@ -52,4 +53,12 @@
     border: 0;
     background: url('assets/Duck_Slider.png');
     cursor: pointer;
+  }
+
+  /* styles the buttons so they are not default HTML buttons */
+  .button{
+    background-color: rgb(189, 224, 255);
+    box-shadow: 5px 5px rgb(72, 72, 72);
+    margin: 0.5vw;
+    border-radius: 0.5vw
   }
