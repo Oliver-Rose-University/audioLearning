@@ -27,42 +27,53 @@ const songsInfo = [
         title: "The Duck Song 1",
         imageSource: "assets/Duck Song 1.jpeg",
         colour: "cornflowerblue",
-        border: "black"
+        border: "black",
+        imageBorder: "black"
     },
     {
         audioSource: "assets/duck2.mp3",
         title: "The Duck Song 2",
         imageSource: "assets/Duck Song 2.jpg",
-        colour: "#cornflowerblue",
-        border: "black"
+        colour: "cornflowerblue",
+        border: "black",
+        imageBorder: "black"
+
     },
     {
         audioSource: "assets/duck3.mp3",
         title: "The Duck Song 3",
         imageSource: "assets/Duck Song 3.jpeg",
         colour: "cornflowerblue",
-        border: "black"
+        border: "black",
+        imageBorder: "black"
+
     },
     {
         audioSource: "assets/duckChristmas.mp3",
         title: "The Christmas Duck Song",
         imageSource: "assets/Duck christmas.jpeg",
         colour: "white",
-        border: "grey"
+        border: "grey",
+        imageBorder: "grey"
+
     },
     {
         audioSource: "assets/duck4.mp3",
         title: "The Duck Song 4",
         imageSource: "assets/Duck Song 4.jpeg",
         colour: "cornflowerblue",
-        border: "black"
+        border: "black",
+        imageBorder: "black"
+
     },
     {
         audioSource: "assets/duck5.mp3",
         title: "The Duck Song 5",
         imageSource: "assets/Duck Song 5.jpeg",
         colour: "orange",
-        border: "orangered"
+        border: "orangered",
+        imageBorder: "orangered"
+
     }
 ];
 
@@ -164,6 +175,7 @@ function playNextSong(){
     
     mixtapeBackground.style.backgroundColor =  songsInfo[songCounter].colour;
     mixtapeBackground.style.borderColor =  songsInfo[songCounter].border;
+    songImage.style.borderColor = songsInfo[songCounter].imageBorder;
     console.log(songsInfo[songCounter])
     }
 
@@ -177,6 +189,7 @@ function playPreviousSong(){
     audioPlayer.src = songsInfo[songCounter].audioSource;
     songTitle.innerHTML = songsInfo[songCounter].title;
     songImage.src = songsInfo[songCounter].imageSource;
+    songImage.style.borderColor = songsInfo[songCounter].imageBorder;
     console.log(songsInfo[songCounter])
 
 
