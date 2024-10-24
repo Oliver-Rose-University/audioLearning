@@ -1,9 +1,9 @@
-const audioplayer = document.getElementsByClassName("div1");
+const audioplayer = document.getElementById("div1");
+const dropZone = document.getElementById("body");
 
 function onDrop(event) {
-    //bring fancyGlasses to these positions
-    draggedImage.style.left = event.clientX - offsetX + "px";
-    draggedImage.style.top = event.clientY - offsetY + "px";
+    audioplayer.style.left = event.clientX - offsetX + "px";
+    audioplayer.style.top = event.clientY - offsetY + "px";
     console.log("Element has been dropped");
 }
 
@@ -14,12 +14,9 @@ function onDragOver(event) {
 
 let offsetX = 0;
 let offsetY = 0;
-let draggedImage = undefined;
 
 function onDragStart(event) {
-    draggedImage = event.target;
-
-    const style = window.getComputedStyle(draggedImage, null);
+    const style = window.getComputedStyle(audioplayer, null);
 
     offsetX = event.clientX - parseInt(style.left);
     offsetY = event.clientY - parseInt(style.top);
@@ -29,8 +26,7 @@ function onDragStart(event) {
 dropZone.ondrop = onDrop;
 dropZone.ondragover = onDragOver;
 
-for (let div1 of audioplayer) {
-    audioplayer.ondragstart = onDragStart;
-    audioplayer.ondragover = onDragOver;
-    audioplayer.ondrop = onDrop;
-}
+
+audioplayer.ondragstart = onDragStart;
+audioplayer.ondragover = onDragOver;
+audioplayer.ondrop = onDrop;

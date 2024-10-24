@@ -2,8 +2,8 @@
 .flexbox{
     display: flex;
     align-items: center;
-    justify-content: center;
 }
+
 
 .flexcolumn{
     flex-direction: column;
@@ -11,29 +11,30 @@
 /* specific ID styling for specific aspects of the HTML */
 #div1{
     width: 60vw;
-    height: 60vh;
+    height: 70vh;
     align-self: center;
+    position: relative;
 }
 
 #div2{
-    height: 300px;
-    margin-top: 10vh;
-    
+    height: 300px;    
 }
 /* sets a different font for the header */
 #header1{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial;
+    padding-top: 5vh;
 }
 /* Determines the size of the image, changing how big or small it is to fit the dimensions given and applying styling */
 .coverImage{
-    width: 25vw;
-    height: auto;
+    width: auto;
+    height: 25vh;
     border: black;
     border-style: solid;
     border-radius: 5%;
     margin: 5%;
     border-width: 15px;
     box-shadow: 15px 15px rgb(72, 72, 72);
+    position: relative;
 }
 
 .mixtape{
@@ -53,6 +54,7 @@
     border: 0;
     background: url('assets/Duck_Slider.png');
     cursor: pointer;
+    padding-bottom: 5vh;
   }
 
   /* styles the buttons so they are not default HTML buttons */
