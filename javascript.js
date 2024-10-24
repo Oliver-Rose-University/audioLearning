@@ -8,10 +8,6 @@ const volumeSlider = document.getElementById("volume-slider");
 const songProgress = document.getElementById("song-progress");
 const songLength = document.getElementById("song-length");
 let mixtapeBackground = document.getElementById("div1");
-// Makes multiple arrays to store data that will be used for a modular format of song selection
-const songList = ["assets/duck1.mp3", "assets/duck2.mp3", "assets/duck3.mp3", "assets/duckChristmas.mp3", "assets/duck4.mp3", "assets/duck5.mp3"]
-const songTitles = ["The Duck Song 1", "The Duck Song 2", "The Duck Song 3", "The Christmas Duck Song", "The Duck Song 4", "The Duck Song 5"]
-const songImages = ["assets/Duck Song 1.jpeg", "assets/Duck Song 2.jpg", "assets/Duck Song 3.jpeg", "assets/Duck Christmas.jpeg", "assets/Duck Song 4.jpeg", "assets/Duck Song 5.jpeg"]
 const nextSong = document.getElementById("next");
 const previousSong = document.getElementById("previous");
 let songCounter = 0;
@@ -182,13 +178,16 @@ function playNextSong(){
     // swaps back to the previous song, looping if it is the first song
 function playPreviousSong(){
     if (songCounter === 0)
-        songCounter = songList.length - 1;
+        songCounter = songsInfo.length - 1;
     
     else
         songCounter--;
     audioPlayer.src = songsInfo[songCounter].audioSource;
     songTitle.innerHTML = songsInfo[songCounter].title;
     songImage.src = songsInfo[songCounter].imageSource;
+
+    mixtapeBackground.style.backgroundColor =  songsInfo[songCounter].colour;
+    mixtapeBackground.style.borderColor =  songsInfo[songCounter].border;
     songImage.style.borderColor = songsInfo[songCounter].imageBorder;
     console.log(songsInfo[songCounter])
 
