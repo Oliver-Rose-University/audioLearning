@@ -18,11 +18,17 @@ let offsetX = 0;
 let offsetY = 0;
 // runs when you begin to move the audio player
 function onDragStart(event) {
-    const style = window.getComputedStyle(audioplayer, null);
+    if(sliderIsChanging){
+        event.preventDefault();
+        return;
+    }
+    else{ 
+        const style = window.getComputedStyle(audioplayer, null);
 
-    offsetX = event.clientX - parseInt(style.left);
-    offsetY = event.clientY - parseInt(style.top);
-    console.log("I'm being Dragged");
+        offsetX = event.clientX - parseInt(style.left);
+        offsetY = event.clientY - parseInt(style.top);
+        console.log("I'm being Dragged");
+    }
 }
 
 // more definitions of events to functions
